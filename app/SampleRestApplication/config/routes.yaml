@@ -1,0 +1,11 @@
+root:
+    path: /
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+        path: /api/doc
+        permanent: true
+
+app.swagger_ui:
+    path: /api/doc
+    methods: GET
+    defaults: { _controller: nelmio_api_doc.controller.swagger_ui }

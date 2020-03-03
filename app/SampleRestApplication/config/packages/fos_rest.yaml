@@ -1,0 +1,24 @@
+# Read the documentation: https://symfony.com/doc/master/bundles/FOSRestBundle/index.html
+fos_rest:
+  access_denied_listener: false
+  allowed_methods_listener: true
+  body_converter:
+    enabled: true
+    validate: true
+    validation_errors_argument: validationErrors
+  body_listener: true
+  param_fetcher_listener: true
+  format_listener:
+    enabled: true
+    rules:
+      - { path: '^/api/doc', priorities: [ html ], fallback_format: html, prefer_extension: false }
+      - { path: '^/api', priorities: [ json ], fallback_format: json, prefer_extension: false }
+      - { path: '^/', stop: true }
+  view:
+    view_response_listener: force
+  exception:
+    enabled: true
+    codes:
+      'Doctrine\ORM\EntityNotFoundException': 404
+      'Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException': 401
+      'Exception': 400
