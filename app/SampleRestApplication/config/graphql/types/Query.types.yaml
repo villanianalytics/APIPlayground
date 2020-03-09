@@ -1,0 +1,15 @@
+Query:
+  type: object
+  config:
+    description: "Employee ORM repository"
+    fields:
+      employee_detail:
+        type: "Employee"
+        args:
+          uuid:
+            description: "Resolves using the employee uuid."
+            type: "String"
+        resolve: "@=resolver('EmployeeDetailResolver', [args])"
+      employee_list:
+        type: "EmployeeList"
+        resolve: "@=resolver('EmployeeListResolver', [args])"

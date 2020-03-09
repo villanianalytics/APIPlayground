@@ -9,3 +9,7 @@ app.swagger_ui:
     path: /api/doc
     methods: GET
     defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
+
+overblog_graphql_single_endpoint:
+    resource: "@OverblogGraphQLBundle/Resources/config/routing/single.yaml"
+    prefix: /g

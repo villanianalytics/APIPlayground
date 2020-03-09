@@ -1,0 +1,26 @@
+Mutation:
+  type: object
+  config:
+    fields:
+      employee_create:
+        type: Employee
+        resolve: "@=resolver('EmployeeCreateResolver', [args])"
+        args:
+          input:
+            type: EmployeeCreateInput!
+      employee_update:
+        type: Employee
+        resolve: "@=resolver('EmployeeUpdateResolver', [args])"
+        args:
+          uuid:
+            description: "Resolves using the employee uuid."
+            type: "String"
+          input:
+            type: EmployeeCreateInput!
+      employee_delete:
+        type: Employee
+        args:
+          uuid:
+            description: "Resolves using the employee uuid."
+            type: "String"
+        resolve: "@=resolver('EmployeeDeleteResolver', [args])"

@@ -17,9 +17,18 @@ security:
             provider: backend_users
             http_basic:
                 realm: "Api"
-        api2:     
-            pattern: "^/api/employees"
-            security: false
+        api_graphiql:
+            pattern: "^/graphiql"
+            provider: backend_users
+            http_basic:
+                realm: "Api"
+        api_graphql:
+            pattern: "^/g"
+            provider: backend_users
+            http_basic:
+                realm: "Api"
 
     access_control:
         - { path: ^/api/employees, roles: ROLE_API_USER }
+        - { path: ^/graphiql, roles: ROLE_API_USER }
+        - { path: ^/g, roles: ROLE_API_USER }

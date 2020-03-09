@@ -1,0 +1,17 @@
+Employee:
+  type: object
+  config:
+    description: "An employee"
+    fields:
+      uuid:
+        type: "String"
+        description: "The unique ID of an employee."
+      name:
+        type: "String"
+        description: "Name of an employee"
+      salary:
+        type: "Int"
+        description: "Salary of an employee"
+      age:
+        type: "Int"
+        description: "Age of an employee"

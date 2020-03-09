@@ -1,0 +1,8 @@
+EmployeeList:
+  type: object
+  config:
+    description: "A list of employees"
+    fields:
+      employees:
+        type: "[Employee]"
+        description: "Employee list"
